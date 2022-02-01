@@ -7,9 +7,8 @@
       p.title.is-4 Duration : {{duration}}
       p.subtitle.is-6 Size : {{size}} Feedbacks: {{total_feedback}} Drills : {{total_drills}}
   .content
-    p.subtitle.is-6 {{video_type}}
-    br
-    p {{formatDate}}
+    p.subtitle.is-6.is-justify-content-center.is-flex {{video_type}}
+    p.is-justify-content-center.is-flex {{formatDate}}
 </template>
 <script>
 import CardImage from '../Card/CardImageComponent.vue'
