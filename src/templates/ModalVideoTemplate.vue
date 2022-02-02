@@ -8,7 +8,7 @@
   )
   button(class="modal-close is-large" aria-label="close" @click="emitToClose(!modal)")
 
-  button(class="button btn-open-another-video" :disabled="twoVideos" @click="selectVideo()")
+  button(class="button btn-open-another-video"  @click="selectVideo()")
     i(class="fas fa-columns")
 
 .modal(v-if="modalSelectTwoVideo" :class="{'is-active' : modalSelectTwoVideo}")
@@ -77,7 +77,10 @@ export default {
   },
   methods: {
     selectSecondVideo(video){
-      console.log(video, 'selectSecondVideo')
+      if(this.$refs.myvideotwo){
+        this.$refs.myvideotwo.removeAttribute('src')
+        this.$refs.myvideotwo.load();
+      } 
       this.videoTwo = video
       this.modalSelectTwoVideo = false
     },

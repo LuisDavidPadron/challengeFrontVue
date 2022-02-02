@@ -3,7 +3,7 @@
   .columns
     .column.is-flex.is-justify-content-center(:class="{ 'is-12': !twoVideos, 'is-6': twoVideos}")
       video( ref="myvideo" :src="video" media="all and (max-width: 480px)" )
-    .column(v-if="twoVideos" :class="{'is-6': twoVideos}")
+    .column.is-flex.is-justify-content-center(v-if="twoVideos" :class="{'is-6': twoVideos}")
       video( ref="myvideotwo" :src="videoTwo" media="all and (max-width: 480px)")
 .columns.is-flex.mt-2
   .column
